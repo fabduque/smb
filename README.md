@@ -1,2 +1,0 @@
-# smb
-Sistema Movimento Bancário
