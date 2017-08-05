@@ -137,4 +137,5 @@ private Categoria populaCategoria(ResultSet rs) throws SQLException {
 			throw new RuntimeException(e);
 		}
 	}
+	
 }

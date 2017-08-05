@@ -2,6 +2,8 @@ package br.com.smb.modelo;
 
 import javax.validation.constraints.Size;
 
+import br.com.smb.dao.CategoriaDao;
+
 public class SubCategoria {
 
 	private Long idSub;
@@ -36,4 +38,8 @@ public class SubCategoria {
 		this.idUser = idUser;
 	}
 	
+	public void descCategoria(){
+		
+		
+	}
 }

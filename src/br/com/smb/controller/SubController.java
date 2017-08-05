@@ -48,6 +48,7 @@ public class SubController {
 	@RequestMapping("listaSub")
 	public String lista(Model model) {
 		model.addAttribute("sub", dao.lista());
+		model.addAttribute("cat", daocat.lista());
 		return "sub/listaSub";
 	}
 	
@@ -66,6 +67,7 @@ public class SubController {
 	@RequestMapping("mostraSub")
 	public String mostra(Long idSub, Model model) {
 		model.addAttribute("sub", dao.buscaPorId(idSub));
+		model.addAttribute("cat", daocat.lista());
 		return "sub/alteraSub";
 	}
 

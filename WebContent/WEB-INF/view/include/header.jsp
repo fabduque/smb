@@ -13,7 +13,7 @@
 					<li><a href="#">Forma de Pagto</a></li>
 				</ul>
 			</li>
-			<li><a href="#">Mov. Bancário</a></li>
+			<li><a href="listaLanctos">Mov. Bancário</a></li>
 			<li><a href="#">Controle Gastos</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">

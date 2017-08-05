@@ -36,5 +36,9 @@ public class Categoria {
 	public void setIdUser(Long idUser) {
 		this.idUser = idUser;
 	}
-
+	
+	@Override
+	public String toString() {
+		return this.dsCategoria;
+	}
 }

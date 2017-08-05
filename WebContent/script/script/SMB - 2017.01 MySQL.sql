@@ -17,13 +17,13 @@ CREATE TABLE smbLancamento(
 	idConta			smallint(5),
 	idCategoria		smallint(5),
 	idSubCategoria	smallint(5),
-	idForma			smallint(5),
+	idForma			smallint(1),
 	idUser			smallint(5),
 	tpConta			smallint(1), -- (1)Conta (2)Cartao
 	dtLancamento	date, 
 	dsLancamento	varchar(50),
 	sgStatus		char(1), -- (R)ealizado, (P)revisto
-	sgMovimento		char(1), -- (D)ebito, (C)redito
+	sgMovimento		char(1), -- (D)ebito, (R)eceita, (T)ransferencia
 	vlLancamento	float,
 	icContaFixa		char(1), -- (S)im, (N)ao
 	dsFaturaCartao	varchar(15));
@@ -60,7 +60,7 @@ CREATE TABLE smbConta(
 	idUser			smallint(5));
 
 CREATE TABLE smbFormaPagto( 
-	idForma		smallint(5)	AUTO_INCREMENT PRIMARY KEY,
+	idForma		smallint(1)	AUTO_INCREMENT PRIMARY KEY,
 	idUser		smallint(5),
 	dsForma		varchar(15)); -- (T)ransf, (D)espesa, (R)eceita, (C)arteira
 
@@ -71,5 +71,9 @@ CREATE TABLE smbSaldo(
 	idConta		smallint(5),
 	idUser		smallint(5));
 
+INSERT INTO smbformapagto (idUser, dsForma) VALUES(1, 'Carteira');
+INSERT INTO smbformapagto (idUser, dsForma) VALUES(1, 'Despesa');
+INSERT INTO smbformapagto (idUser, dsForma) VALUES(1, 'Receita');
+INSERT INTO smbformapagto (idUser, dsForma) VALUES(1, 'Transfer�ncia');
 
 	

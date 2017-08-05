@@ -9,6 +9,7 @@
    	<meta content="width=device-width, initial-scale=1.0" name="viewport" charset="utf-8">
     <title>SMB - Sistema Movimento Bancário</title>
     <link rel="stylesheet" href="resources/bootstrap/css/bootstrapv336.min.css">
+    <link rel="stylesheet" href="resources/css/estilo.css">
 	<script src="resources/bootstrap/js/bootstrap.min.js"></script>
 	<script src="resources/jquery/jquery.min.js"></script>
 </head>
@@ -16,31 +17,33 @@
 
 	<c:import url="../include/header.jsp" />
 
-<div class="container">    
-	<div class="panel panel-primary" >
-			<div class="panel-heading">
-				<div class="row">
-					<div class="col-sm-4"><h4>Lista Categoria</h4></div>
-					<div class="col-sm-4"></div>
-					<div class="col-sm-4" align="right">
-					<a href="novaCategoria">
-						<button type="button" class="btn btn-primary btn-xs">
-							<h6><span class="glyphicon glyphicon-plus-sign"></span> Nova Categoria</h6>
-						</button>
-					</a>
-					<a href="novaCategoria">
-						<button type="button" class="btn btn-primary btn-xs">
-							<h6><span class="glyphicon glyphicon-share"></span></h6>
-						</button>
-					</a>
-					<a href="novaCategoria">
-						<button type="button" class="btn btn-primary btn-xs">
-							<h6><span class="glyphicon glyphicon-print"></span></h6>
-						</button>
-					</a>
-					</div>
-		        </div>     
+<div class="container">   
+	<div class="col-md-3"></div>
+	<div class="panel panel-primary col-md-6 boxazul" >
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col-sm-4"><h4>Lista Categoria</h4></div>
+				<div class="col-sm-4"></div>
+				<div class="col-sm-" align="right">
+				<a href="novaCategoria">
+					<button type="button" class="btn btn-primary btn-xs">
+						<h6><span class="glyphicon glyphicon-plus-sign"></span> Nova Categoria</h6>
+					</button>
+				</a>
+				<a href="novaCategoria">
+					<button type="button" class="btn btn-primary btn-xs">
+						<h6><span class="glyphicon glyphicon-share"></span></h6>
+					</button>
+				</a>
+				<a href="novaCategoria">
+					<button type="button" class="btn btn-primary btn-xs">
+						<h6><span class="glyphicon glyphicon-print"></span></h6>
+					</button>
+					&nbsp
+				</a>
+				</div>
 	        </div>     
+        </div>     
         <div class="panel">
 			<div class="table-responsive">
 				<table class="table-condensed">
@@ -55,11 +58,11 @@
 						<!-- percorre categoria montando linhas da tabela -->
 		                   	<c:forEach var="categoria" items="${categoria}" varStatus="id">
 		                        <tr bgcolor="#${id.count % 2 == 0 ? 'ffffff' : 'F8F8F8'  }">
-		                            <td>${categoria.idCategoria }</td>
-		                            <td>${categoria.dsCategoria }</td>
-		                            <td>${categoria.icDebCred }</td>
-		                            <td>${categoria.idUser }</td>
-		                            	
+		                            <td><font size="2">${categoria.idCategoria }</font></td>
+		                            <td><font size="2">${categoria.dsCategoria }</font></td>
+		                            <td><font size="2">${categoria.icDebCred }</font></td>
+		                            <td><font size="2">${categoria.idUser }</font></td>
+
 		                            <td class="actions">
 		                            <a href="#">
 		                            	<span class="glyphicon glyphicon-eye-open"></span>
@@ -72,7 +75,6 @@
 		                            </a>
 		                    	    </td>
 		                      	</tr>
-
 	                      	</c:forEach>
                     </tbody>
                 </table>
@@ -85,13 +87,19 @@
                     <a class='box_navegacao'  href="#"  title="Última Página"> .. </a>
                 </div>
             </div>
-            <div id="actions" class="row">
-            	<div class="col-md-12">
-            		  <a href="abertura" class="btn btn-primary btn-xs">Voltar</a>
-        		</div>  
-    		</div>
+
 		</div> 
-   	</div> 	
+   	</div>
+   	<div class="col-md-3"></div>
+</div>
+<div class="container">
+	<div class="row">
+	    <div class="col-md-3"></div>	
+		<div class="panel col-md-6" >
+	     	<a href="abertura" class="btn btn-primary btn-xs">Voltar</a>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
 </div>
 
 <c:import url="../include/footer.jsp" />

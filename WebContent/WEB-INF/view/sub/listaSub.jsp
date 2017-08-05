@@ -9,6 +9,7 @@
    	<meta content="width=device-width, initial-scale=1.0" name="viewport" charset="utf-8">
     <title>SMB - Sistema Movimento Bancário</title>
     <link rel="stylesheet" href="resources/bootstrap/css/bootstrapv336.min.css">
+    <link rel="stylesheet" href="resources/css/estilo.css">
 	<script src="resources/bootstrap/js/bootstrap.min.js"></script>
 	<script src="resources/jquery/jquery.min.js"></script>
 </head>
@@ -16,39 +17,40 @@
 
 	<c:import url="../include/header.jsp" />
 
-<div class="container">    
-	<div class="panel panel-primary" >
-			<div class="panel-heading">
-				<div class="row">
-					<div class="col-sm-4"><h4>Lista SubCategoria</h4></div>
-					<div class="col-sm-4"></div>
-					<div class="col-sm-4" align="right">
-					<a href="novaSub">
-						<button type="button" class="btn btn-primary btn-xs">
-							<h6><span class="glyphicon glyphicon-plus-sign"></span> Nova SubCategoria</h6>
-						</button>
-					</a>
-					<a href="novaSub">
-						<button type="button" class="btn btn-primary btn-xs">
-							<h6><span class="glyphicon glyphicon-share"></span></h6>
-						</button>
-					</a>
-					<a href="novaSub">
-						<button type="button" class="btn btn-primary btn-xs">
-							<h6><span class="glyphicon glyphicon-print"></span></h6>
-						</button>
-					</a>
-					</div>
-		        </div>     
+<div class="container">   
+	<div class="col-md-3"></div>
+	<div class="panel panel-primary col-md-6 boxazul" >
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col-sm-4"><h4>Lista SubCategoria</h4></div>
+				<div class="col-sm-4"></div>
+				<div class="col-sm-" align="right">
+				<a href="novaSub">
+					<button type="button" class="btn btn-primary btn-xs">
+						<h6><span class="glyphicon glyphicon-plus-sign"></span> Nova Sub</h6>
+					</button>
+				</a>
+				<a href="novaSub">
+					<button type="button" class="btn btn-primary btn-xs">
+						<h6><span class="glyphicon glyphicon-share"></span></h6>
+					</button>
+				</a>
+				<a href="novaSub">
+					<button type="button" class="btn btn-primary btn-xs">
+						<h6><span class="glyphicon glyphicon-print"></span></h6>
+					</button>
+					&nbsp
+				</a>
+				</div>
 	        </div>     
+        </div>     
         <div class="panel">
 			<div class="table-responsive">
-				<div class="alert alert-sucess" role="alert">${sucesso}
 				<table class="table-condensed">
 					<tr>
                         <th><font size="2">#</font></th>
                         <th><font size="2">Descrição</font></th>
-                        <th><font size="2">Id Categoria</font></th>
+                        <th><font size="2">Categoria</font></th>
                         <th><font size="2">ID_User</font></th>
                         <th><font size="2">Ação</font></th>
                     </tr>
@@ -56,10 +58,17 @@
 						<!-- percorre categoria montando linhas da tabela -->
 		                   	<c:forEach var="sub" items="${sub}" varStatus="id">
 		                        <tr bgcolor="#${id.count % 2 == 0 ? 'ffffff' : 'F8F8F8'  }">
-		                            <td>${sub.idSub }</td>
-		                            <td>${sub.dsSub }</td>
-		                            <td>${sub.idCategoria }</td>
-		                            <td>${sub.idUser }</td>
+		                            <td><font size="2">${sub.idSub }</font></td>
+		                            <td><font size="2">${sub.dsSub }</font></td>
+		                            <td><font size="2">
+		                            	<c:forEach items="${cat}" var="cat">
+			                            	<c:if test="${cat.idCategoria == sub.idCategoria }">
+				                            	<c:out value="${cat}"></c:out>
+			                            	</c:if>
+		                            	</c:forEach>
+		                            	</font>
+		                            </td>
+		                            <td><font size="2">${sub.idUser }</font></td>
 		                            	
 		                            <td class="actions">
 		                            <a href="#">
@@ -87,15 +96,18 @@
                     <a class='box_navegacao'  href="#"  title="Última Página"> .. </a>
                 </div>
             </div>
-            <div id="actions" class="row">
-            	<div class="col-md-12">
-            		  <a href="abertura" class="btn btn-primary btn-xs">Voltar</a>
-        		</div>  
-    		</div>
-		</div> 
-   	</div> 	
+ 		</div> 
+   	<div class="col-md-3"></div>
 </div>
-
+<div class="container">
+	<div class="row">
+	    <div class="col-md-3"></div>	
+		<div class="panel col-md-6" >
+	     	<a href="abertura" class="btn btn-primary btn-xs">Voltar</a>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>
 <c:import url="../include/footer.jsp" />
 
 </body>

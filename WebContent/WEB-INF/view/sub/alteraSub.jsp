@@ -30,7 +30,12 @@
 					    </div>
 							<select class="form-control" name="idCategoria">
 								<c:forEach var="categoria" items="${cat}" varStatus="id">
-									<option value="${categoria.idCategoria }">${categoria.dsCategoria }</option>
+									<c:if test="${categoria.idCategoria == sub.idCategoria }">
+										<option value="${categoria.idCategoria }" selected >${categoria.dsCategoria }</option>
+									</c:if>
+									<c:if test="${categoria.idCategoria != sub.idCategoria }">
+										<option value="${categoria.idCategoria }">${categoria.dsCategoria }</option>
+									</c:if>
 		                      	</c:forEach>
 							</select>
 					    <div class="form-group">
